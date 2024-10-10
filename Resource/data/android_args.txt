@@ -1,5 +1,0 @@
-#Android Tests
-command: pabot -v PLATFORM:Android /Users/sittipol.p/Desktop/Assignment3-main
-
-#iOS Tests
-command: pabot -v PLATFORM:ios /Users/sittipol.p/Desktop/Assignment3-main

@@ -1,6 +1,4 @@
 *** Keywords ***
-Verify Cart Has 1 Item
-    Wait Until Element Is Visible    ${item}    5s
-    ${item_text}=    Get Text    ${item}
-    Should Match Regexp    ${item_text}    ^1.*
+Verify cart has 1 item
+    common.Get text and regexp when ready   ${item}
 

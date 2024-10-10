@@ -1,2 +1,0 @@
---variable platform:ios
-Assignment3-1/Testcase/testcase1.robot

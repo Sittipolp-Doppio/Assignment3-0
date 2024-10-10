@@ -6,3 +6,6 @@ devices:
   app_package: "com.saucelabs.mydemoapp.rn"
   app_activity: "com.saucelabs.mydemoapp.rn.MainActivity"
 
+
+set:
+  waittime: 10s

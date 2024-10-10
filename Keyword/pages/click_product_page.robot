@@ -1,3 +1,3 @@
 *** Keywords ***
-Click Product
+Click product
     common.Tap when ready    ${product}
