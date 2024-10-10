@@ -1,5 +1,6 @@
 *** Settings ***
 Library    AppiumLibrary
+Library    DebugLibrary
 Library    String
 
 Variables    ${CURDIR}../../Resource/setting/${platform}.yaml

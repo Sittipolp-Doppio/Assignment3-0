@@ -1,8 +1,9 @@
 *** Keywords ***
 Open Test Application
     [Documentation]    เปิดแอปพลิเคชันทดสอบบนอุปกรณ์ iOS และ Android
-    Run Keyword If    '${PLATFORM}' == 'Android'    Open Android Application
-    ...    ELSE    Open iOS Application
+    Run Keyword If    '${PLATFORM}' == 'android'    Open Android Application
+    ...    ELSE IF    '${PLATFORM}' == 'ios'    Open iOS Application
+    ...    ELSE    Fail    Invalid platform: ${PLATFORM}
 
 Open Android Application
     AppiumLibrary.Open Application
