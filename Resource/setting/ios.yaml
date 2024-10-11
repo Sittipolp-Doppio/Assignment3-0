@@ -10,3 +10,7 @@ devices:
 
 set:
   waittime: 10s
+
+elements:
+    1: "Sauce Labs Backpack"
+    2: "Sauce Labs Bike Light"
