@@ -3,15 +3,24 @@ Tap when ready
     [Arguments]    ${locator}
     AppiumLibrary.Wait until element is visible    ${locator}   ${set.waittime}
     AppiumLibrary.Click element    ${locator}
+
+Scroll down to element
+    [Arguments]    ${locator}    ${locator1}
+    AppiumLibrary.Wait until element is visible    ${locator1}    ${set.waittime}
+    AppiumLibrary.Scroll    ${locator}    ${locator1}
+    
     
 Get text and regexp when ready
     [Arguments]    ${locator}
     AppiumLibrary.Wait until element is visible    ${locator}    ${set.waittime}
+    Log To Console    c=${locator}
     ${item_text}=   AppiumLibrary.Get text    ${locator}
+    Log To Console    item=${item_text}
     BuiltIn.Should match regexp    ${item_text}    ^1.*
 
 Close app
     AppiumLibrary.Close application
+
 Open test application
     [Documentation]    เปิดแอปพลิเคชันทดสอบบนอุปกรณ์ iOS และ Android
     Run Keyword If    '${PLATFORM}' == 'android'    Open android application
@@ -36,4 +45,5 @@ Open ios application
     ...    bundleId=${devices.bundle_id}
     ...    automationName=${devices.automation_name}
     ...    WebDriverAgentUrl=${devices.web_driver_agent}
+    ...    noReset=${devices.no_reset}
 
