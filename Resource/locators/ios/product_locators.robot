@@ -1,2 +1,2 @@
 *** Variables ***
-${product}       xpath=//XCUIElementTypeOther[@name=${elements.${index}}]
+${product} xpath=//XCUIElementTypeOther[@name='${product_name}']

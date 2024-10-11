@@ -5,7 +5,7 @@ Suite Setup    common.Open test application
 
 *** Test Cases ***
 tc0-App test
-    click_product_page.Click product
+    click_product_page.Click product    1
     add_product_features.Add Product To Cart
     verify_cart_page.Verify cart has 1 item
     [Teardown]    common.Close app
