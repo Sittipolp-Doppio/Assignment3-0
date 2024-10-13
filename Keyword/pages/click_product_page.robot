@@ -1,7 +1,8 @@
 *** Keywords ***
 Click product
-    ${product_name}=    Set Variable    ${Tc_001.item1}
-    ${locator}=    String.Replace String   ${product}    {product_name}    ${product_name}
-    common.Scroll down to element    ${first_product}    ${locator}
+    [Arguments]    ${item}
+    ${product_name}=    BuiltIn.Set variable    ${item}
+    ${locator}=    String.Replace string   ${product}    {product_name}    ${product_name}
+    common.Scroll down to element    ${title_product}    ${locator}
     common.Tap when ready    ${locator}
     

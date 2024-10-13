@@ -9,7 +9,3 @@ devices:
 
 set:
   waittime: 10s
-
-Tc_001:
-  item: "1"
-  item1: "2"

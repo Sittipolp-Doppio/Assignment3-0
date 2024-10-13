@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.7 on darwin)" generated="2024-10-11T12:57:04.968713" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.7 on darwin)" generated="2024-10-13T14:39:10.834119" rpa="false" schemaversion="5">
 <suite id="s1" name="Assignment3-main" source="/Users/sittipol.p/Desktop/Assignment3-main">
 <suite id="s1-s1" name="Assignment3-1" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1">
 <suite id="s1-s1-s1" name="Testcase" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1/Testcase">
 <suite id="s1-s1-s1-s1" name="Testcase1" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1/Testcase/testcase1.robot">
 <kw name="Open test application" owner="common" type="SETUP">
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Open ios application" owner="common">
+<kw name="Open iOS Application" owner="common">
 <kw name="Open Application" owner="AppiumLibrary">
-<arg>${devices.remote_url}</arg>
-<arg>deviceName=${devices.device_name}</arg>
-<arg>platformVersion=${devices.platform_version}</arg>
-<arg>platformName=${devices.platform_name}</arg>
-<arg>bundleId=${devices.bundle_id}</arg>
-<arg>automationName=${devices.automation_name}</arg>
-<arg>WebDriverAgentUrl=${devices.web_driver_agent}</arg>
-<arg>noReset=${devices.no_reset}</arg>
+<arg>http://127.0.0.1:1234/wd/hub</arg>
+<arg>deviceName=iPhone 16</arg>
+<arg>platformVersion=18.0</arg>
+<arg>platformName=iOS</arg>
+<arg>bundleId=com.saucelabs.mydemoapp.rn</arg>
+<arg>automationName=XCUITest</arg>
+<arg>WebDriverAgentUrl=http://192.168.188.188:8100</arg>
+<arg>noReset=${False}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -23,9 +23,9 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-10-11T12:57:05.051732" elapsed="5.040220"/>
+<status status="PASS" start="2024-10-13T14:39:10.960237" elapsed="5.095703"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:05.051652" elapsed="5.040588"/>
+<status status="PASS" start="2024-10-13T14:39:10.960055" elapsed="5.096306"/>
 </kw>
 <arg>'${PLATFORM}' == 'android'</arg>
 <arg>Open android application</arg>
@@ -36,172 +36,166 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 <arg>Fail</arg>
 <arg>Invalid platform: ${PLATFORM}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-11T12:57:05.051482" elapsed="5.040837"/>
+<status status="PASS" start="2024-10-13T14:39:10.959880" elapsed="5.096567"/>
 </kw>
 <doc>เปิดแอปพลิเคชันทดสอบบนอุปกรณ์ iOS และ Android</doc>
-<status status="PASS" start="2024-10-11T12:57:05.051198" elapsed="5.041210"/>
+<status status="PASS" start="2024-10-13T14:39:10.959693" elapsed="5.096862"/>
 </kw>
 <test id="s1-s1-s1-s1-t1" name="tc0-App test" line="7">
 <kw name="Click product" owner="click_product_page">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-11T12:57:10.093946" level="INFO">${product_name} = Test.allTheThings() T-Shirt</msg>
+<msg time="2024-10-13T14:39:16.058479" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
 <var>${product_name}</var>
-<arg>${Tc_001.item1}</arg>
+<arg>${item}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-11T12:57:10.093396" elapsed="0.000591"/>
+<status status="PASS" start="2024-10-13T14:39:16.058262" elapsed="0.000261"/>
 </kw>
 <kw name="Replace String" owner="String">
-<msg time="2024-10-11T12:57:10.094400" level="INFO">${locator} = xpath=//XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]</msg>
+<msg time="2024-10-13T14:39:16.059011" level="INFO">${locator} = xpath=//XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <var>${locator}</var>
 <arg>${product}</arg>
 <arg>{product_name}</arg>
 <arg>${product_name}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2024-10-11T12:57:10.094160" elapsed="0.000277"/>
+<status status="PASS" start="2024-10-13T14:39:16.058767" elapsed="0.000273"/>
 </kw>
 <kw name="Scroll down to element" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:11.147883" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]</msg>
+<msg time="2024-10-13T14:39:17.428764" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]
+xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator1}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-11T12:57:10.094986" elapsed="1.052999"/>
+<status status="PASS" start="2024-10-13T14:39:16.059453" elapsed="1.369503"/>
 </kw>
 <kw name="Scroll" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:13.997080" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Backpack"]
-xpath criteria: //XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]</msg>
+<msg time="2024-10-13T14:39:20.254930" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="Products"]
+xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <arg>${locator1}</arg>
 <doc>Scrolls from one element to another
 Key attributes for arbitrary elements are `id` and `name`. See
 `introduction` for details about locating elements.</doc>
-<status status="PASS" start="2024-10-11T12:57:11.148201" elapsed="2.849072"/>
+<status status="PASS" start="2024-10-13T14:39:17.429396" elapsed="2.825725"/>
 </kw>
-<arg>${first_product}</arg>
+<arg>${title_product}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-10-11T12:57:10.094635" elapsed="3.902878"/>
+<status status="PASS" start="2024-10-13T14:39:16.059188" elapsed="4.196175"/>
 </kw>
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:14.717961" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]</msg>
+<msg time="2024-10-13T14:39:20.949590" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-11T12:57:13.998704" elapsed="0.719455"/>
+<status status="PASS" start="2024-10-13T14:39:20.256517" elapsed="0.693258"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:14.720881" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]'.</msg>
-<msg time="2024-10-11T12:57:15.861188" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Test.allTheThings() T-Shirt"]</msg>
+<msg time="2024-10-13T14:39:20.952320" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]'.</msg>
+<msg time="2024-10-13T14:39:21.944277" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-11T12:57:14.718563" elapsed="1.142816"/>
+<status status="PASS" start="2024-10-13T14:39:20.950176" elapsed="0.994292"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-10-11T12:57:13.997975" elapsed="1.863642"/>
+<status status="PASS" start="2024-10-13T14:39:20.255829" elapsed="1.688886"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:10.093082" elapsed="5.768697"/>
+<arg>${Tc_001.item2}</arg>
+<status status="PASS" start="2024-10-13T14:39:16.057386" elapsed="5.887503"/>
 </kw>
 <kw name="Add product to cart" owner="add_product_features">
 <kw name="Add product" owner="add_product_page">
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:16.360745" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
+<msg time="2024-10-13T14:39:22.444481" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-11T12:57:15.863888" elapsed="0.497036"/>
+<status status="PASS" start="2024-10-13T14:39:21.947142" elapsed="0.497523"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:16.362685" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Add To Cart button"]'.</msg>
-<msg time="2024-10-11T12:57:17.132966" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
+<msg time="2024-10-13T14:39:22.446990" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Add To Cart button"]'.</msg>
+<msg time="2024-10-13T14:39:23.202719" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-11T12:57:16.361329" elapsed="0.771746"/>
+<status status="PASS" start="2024-10-13T14:39:22.445073" elapsed="0.757827"/>
 </kw>
 <arg>${add_cart}</arg>
-<status status="PASS" start="2024-10-11T12:57:15.863507" elapsed="1.269684"/>
+<status status="PASS" start="2024-10-13T14:39:21.946767" elapsed="1.256361"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:15.863186" elapsed="1.270067"/>
+<status status="PASS" start="2024-10-13T14:39:21.946206" elapsed="1.257078"/>
 </kw>
 <kw name="Click cart" owner="add_product_page">
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:17.568642" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
+<msg time="2024-10-13T14:39:23.632230" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-11T12:57:17.134349" elapsed="0.434475"/>
+<status status="PASS" start="2024-10-13T14:39:23.205191" elapsed="0.427219"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:17.571377" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="tab bar option cart"]'.</msg>
-<msg time="2024-10-11T12:57:18.376201" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
+<msg time="2024-10-13T14:39:23.635471" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="tab bar option cart"]'.</msg>
+<msg time="2024-10-13T14:39:24.519304" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-11T12:57:17.569284" elapsed="0.807102"/>
+<status status="PASS" start="2024-10-13T14:39:23.632811" elapsed="0.886673"/>
 </kw>
 <arg>${cart}</arg>
-<status status="PASS" start="2024-10-11T12:57:17.133985" elapsed="1.242624"/>
+<status status="PASS" start="2024-10-13T14:39:23.204639" elapsed="1.315063"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:17.133491" elapsed="1.243272"/>
+<status status="PASS" start="2024-10-13T14:39:23.203795" elapsed="1.316057"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:15.862462" elapsed="2.514439"/>
+<status status="PASS" start="2024-10-13T14:39:21.945474" elapsed="2.574503"/>
 </kw>
 <kw name="Verify cart has 1 item" owner="verify_cart_page">
 <kw name="Get text and regexp when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:18.887229" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
+<msg time="2024-10-13T14:39:25.038856" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-11T12:57:18.378479" elapsed="0.508995"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>c=${locator}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-11T12:57:18.887732" elapsed="0.000337"/>
+<status status="PASS" start="2024-10-13T14:39:24.521944" elapsed="0.517229"/>
 </kw>
 <kw name="Get Text" owner="AppiumLibrary">
-<msg time="2024-10-11T12:57:19.376903" level="INFO">Element '//XCUIElementTypeStaticText[@name="total number"]' text is '2 items' </msg>
-<msg time="2024-10-11T12:57:19.377014" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
-<msg time="2024-10-11T12:57:19.377115" level="INFO">${item_text} = 2 items</msg>
+<msg time="2024-10-13T14:39:25.545417" level="INFO">Element '//XCUIElementTypeStaticText[@name="total number"]' text is '3 items' </msg>
+<msg time="2024-10-13T14:39:25.545528" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
+<msg time="2024-10-13T14:39:25.545629" level="INFO">${item_text} = 3 items</msg>
 <var>${item_text}</var>
 <arg>${locator}</arg>
 <doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
-<status status="PASS" start="2024-10-11T12:57:18.888253" elapsed="0.488897"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>item=${item_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-11T12:57:19.377400" elapsed="0.000305"/>
+<status status="PASS" start="2024-10-13T14:39:25.039605" elapsed="0.506058"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2024-10-11T12:57:19.378285" level="FAIL">'2 items' does not match '^1.*'</msg>
+<msg time="2024-10-13T14:39:25.546385" level="FAIL">'3 items' does not match '^1.*'</msg>
 <arg>${item_text}</arg>
-<arg>^1.*</arg>
+<arg>^${number}.*</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2024-10-11T12:57:19.377887" elapsed="0.000623">'2 items' does not match '^1.*'</status>
+<status status="FAIL" start="2024-10-13T14:39:25.545913" elapsed="0.000708">'3 items' does not match '^1.*'</status>
 </kw>
 <arg>${item}</arg>
-<status status="FAIL" start="2024-10-11T12:57:18.378132" elapsed="1.000565">'2 items' does not match '^1.*'</status>
+<arg>${number}</arg>
+<status status="FAIL" start="2024-10-13T14:39:24.521244" elapsed="1.025561">'3 items' does not match '^1.*'</status>
 </kw>
-<status status="FAIL" start="2024-10-11T12:57:18.377456" elapsed="1.001367">'2 items' does not match '^1.*'</status>
+<arg>1</arg>
+<status status="FAIL" start="2024-10-13T14:39:24.520512" elapsed="1.026421">'3 items' does not match '^1.*'</status>
 </kw>
-<status status="FAIL" start="2024-10-11T12:57:10.092529" elapsed="9.286638">'2 items' does not match '^1.*'</status>
+<status status="FAIL" start="2024-10-13T14:39:16.056710" elapsed="9.490489">'3 items' does not match '^1.*'</status>
 </test>
 <kw name="Close app" owner="common" type="TEARDOWN">
 <kw name="Close Application" owner="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" start="2024-10-11T12:57:19.380457" elapsed="1.063167"/>
+<status status="PASS" start="2024-10-13T14:39:25.548255" elapsed="1.067673"/>
 </kw>
-<status status="PASS" start="2024-10-11T12:57:19.380170" elapsed="1.063578"/>
+<status status="PASS" start="2024-10-13T14:39:25.547997" elapsed="1.068273"/>
 </kw>
-<status status="FAIL" start="2024-10-11T12:57:04.979559" elapsed="15.464235"/>
+<status status="FAIL" start="2024-10-13T14:39:10.848265" elapsed="15.768143"/>
 </suite>
-<status status="FAIL" start="2024-10-11T12:57:04.979242" elapsed="15.465257"/>
+<status status="FAIL" start="2024-10-13T14:39:10.847958" elapsed="15.770373"/>
 </suite>
-<status status="FAIL" start="2024-10-11T12:57:04.978841" elapsed="15.466041"/>
+<status status="FAIL" start="2024-10-13T14:39:10.847572" elapsed="15.771499"/>
 </suite>
-<status status="FAIL" start="2024-10-11T12:57:04.969340" elapsed="15.475858"/>
+<status status="FAIL" start="2024-10-13T14:39:10.834715" elapsed="15.784877"/>
 </suite>
 <statistics>
 <total>

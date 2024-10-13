@@ -5,6 +5,8 @@ Library    String
 
 Variables    ${CURDIR}../../Resource/setting/${platform}.yaml
 
+Variables    ${CURDIR}../../Resource/testdata/${platform}/data.yaml
+
 Resource     ${CURDIR}../../Resource/locators/${platform}/cart_locators.robot
 Resource     ${CURDIR}../../Resource/locators/${platform}/detail_locators.robot
 Resource     ${CURDIR}../../Resource/locators/${platform}/product_locators.robot

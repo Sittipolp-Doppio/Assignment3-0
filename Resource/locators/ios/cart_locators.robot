@@ -1,2 +1,2 @@
 *** Variables ***
-${item}          //XCUIElementTypeStaticText[@name="total number"]
+${item}    //XCUIElementTypeStaticText[@name="total number"]
