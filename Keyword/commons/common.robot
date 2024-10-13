@@ -1,5 +1,4 @@
-*** Settings ***
-Library    AppiumLibrary
+
 *** Keywords ***
 Tap when ready
     [Arguments]    ${locator}

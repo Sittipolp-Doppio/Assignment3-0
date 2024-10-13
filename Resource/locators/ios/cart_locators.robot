@@ -1,3 +1,3 @@
 *** Variables ***
-${item}    xpath=//XCUIElementTypeStaticText[@name="total number"]
-${delete}    xpath=//XCUIElementTypeOther[@name="counter minus button"]
+${cart_locators.item}    xpath=//XCUIElementTypeStaticText[@name="total number"]
+${cart_locators.delete}    xpath=//XCUIElementTypeOther[@name="counter minus button"]
