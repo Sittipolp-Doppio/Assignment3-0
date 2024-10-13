@@ -18,5 +18,5 @@ Resource     ${CURDIR}../../Keyword/features/add_product_features.robot
 Resource     ${CURDIR}../../Keyword/pages/add_product_page.robot
 Resource     ${CURDIR}../../Keyword/pages/click_product_page.robot
 Resource     ${CURDIR}../../Keyword/pages/verify_cart_page.robot
-
+Resource     ${CURDIR}../../Keyword/pages/delete_product_page.robot
 
