@@ -1,7 +1,8 @@
+*** Settings ***
+Resource    ../commons/common.robot
 *** Keywords ***
 Delete product
-    [Arguments]    ${number}
-    WHILE    '${number}' != '0'
-        common.Get text and regexp when ready   ${item}    ${number}
-        Run Keyword If    '${number}' != '0'    common.Tap when ready    ${delete}
+    [Arguments]    ${number_loop}
+    FOR    ${i}    IN RANGE    ${number_loop}
+        common.Tap when ready    ${delete}
     END

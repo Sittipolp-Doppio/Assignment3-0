@@ -3,8 +3,8 @@ devices:
   device_name: "iPhone 16"
   platform_version: "18.0"
   platform_name: "iOS"
-  platform_version: "18.0"
   bundle_id: "com.saucelabs.mydemoapp.rn"
+  ud_id: "5ED10CC1-923C-4E11-83A5-95F6ED996710"
   automation_name: "XCUITest"
   web_driver_agent: "http://192.168.188.188:8100"
 

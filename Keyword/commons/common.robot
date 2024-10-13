@@ -1,3 +1,5 @@
+*** Settings ***
+Library    AppiumLibrary
 *** Keywords ***
 Tap when ready
     [Arguments]    ${locator}
@@ -33,14 +35,13 @@ Open android application
 
 Open iOS Application
     AppiumLibrary.Open Application
-    ...    http://127.0.0.1:1234/wd/hub    
-    ...    deviceName=iPhone 16S
-    ...    platformVersion=18.0
-    ...    platformName=iOS
-    ...    bundleId=com.saucelabs.mydemoapp.rn
-    ...    automationName=XCUITest
-    ...    WebDriverAgentUrl=http://192.168.188.188:8100
+    ...    remote_url=${devices.remote_url} 
+    ...    deviceName=${devices.device_name}
+    ...    platformVersion=${devices.platform_version}
+    ...    platformName=${devices.platform_name}
+    ...    bundleId=${devices.bundle_id}
+    ...    automationName=${devices.automation_name}
+    ...    WebDriverAgentUrl=${devices.web_driver_agent}
     ...    noReset=${false}
-
 Close app
     appiumLibrary.Close application

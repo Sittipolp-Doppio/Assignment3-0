@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.10.4 on win32)" generated="2024-10-13T16:18:02.760514" rpa="false" schemaversion="5">
-<suite id="s1" name="Assignment3-0" source="F:\Work\New folder\Assignment3-0\..\Assignment3-0">
-<suite id="s1-s1" name="Testcase" source="F:\Work\New folder\Assignment3-0\..\Assignment3-0\Testcase">
-<suite id="s1-s1-s1" name="Testcase1" source="F:\Work\New folder\Assignment3-0\..\Assignment3-0\Testcase\testcase1.robot">
+<robot generator="Robot 7.1 (Python 3.12.7 on darwin)" generated="2024-10-13T17:37:28.665087" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment3-main" source="/Users/sittipol.p/Desktop/Assignment3-main">
+<suite id="s1-s1" name="Assignment3-1" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1">
+<suite id="s1-s1-s1" name="Testcase" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1/Testcase">
+<suite id="s1-s1-s1-s1" name="Testcase1" source="/Users/sittipol.p/Desktop/Assignment3-main/Assignment3-1/Testcase/testcase1.robot">
 <kw name="Open test application" owner="common" type="SETUP">
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Open android application" owner="common">
+<kw name="Open iOS Application" owner="common">
 <kw name="Open Application" owner="AppiumLibrary">
-<arg>${devices.remote_url}</arg>
+<arg>remote_url=${devices.remote_url}</arg>
 <arg>deviceName=${devices.device_name}</arg>
 <arg>platformVersion=${devices.platform_version}</arg>
 <arg>platformName=${devices.platform_name}</arg>
-<arg>appPackage=${devices.app_package}</arg>
-<arg>appActivity=${devices.app_activity}</arg>
+<arg>bundleId=${devices.bundle_id}</arg>
+<arg>automationName=${devices.automation_name}</arg>
+<arg>WebDriverAgentUrl=${devices.web_driver_agent}</arg>
+<arg>noReset=${false}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -20,9 +23,9 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-10-13T16:18:03.085669" elapsed="6.317189"/>
+<status status="PASS" start="2024-10-13T17:37:28.831261" elapsed="5.269104"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:03.084672" elapsed="6.318186"/>
+<status status="PASS" start="2024-10-13T17:37:28.831120" elapsed="5.269378"/>
 </kw>
 <arg>'${PLATFORM}' == 'android'</arg>
 <arg>Open android application</arg>
@@ -33,186 +36,306 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 <arg>Fail</arg>
 <arg>Invalid platform: ${PLATFORM}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-13T16:18:03.084672" elapsed="6.318186"/>
+<status status="PASS" start="2024-10-13T17:37:28.830948" elapsed="5.269589"/>
 </kw>
 <doc>เปิดแอปพลิเคชันทดสอบบนอุปกรณ์ iOS และ Android</doc>
-<status status="PASS" start="2024-10-13T16:18:03.084672" elapsed="6.318186"/>
+<status status="PASS" start="2024-10-13T17:37:28.830770" elapsed="5.269819"/>
 </kw>
-<test id="s1-s1-s1-t1" name="tc0-App test" line="7">
+<test id="s1-s1-s1-s1-t1" name="tc0-App test" line="8">
 <kw name="Click product" owner="click_product_page">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-13T16:18:09.405851" level="INFO">${product_name} = 3</msg>
+<msg time="2024-10-13T17:37:34.101370" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
 <var>${product_name}</var>
 <arg>${item}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-13T16:18:09.405851" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-13T17:37:34.101293" elapsed="0.000091"/>
 </kw>
 <kw name="Replace String" owner="String">
-<msg time="2024-10-13T16:18:09.406848" level="INFO">${locator} = xpath=(//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:34.101569" level="INFO">${locator} = xpath=//XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <var>${locator}</var>
 <arg>${product}</arg>
 <arg>{product_name}</arg>
 <arg>${product_name}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2024-10-13T16:18:09.406848" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-13T17:37:34.101490" elapsed="0.000089"/>
 </kw>
 <kw name="Scroll down to element" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:10.531219" level="INFO">xpath criteria: (//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:35.615473" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]
+xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator1}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-13T16:18:09.407846" elapsed="1.123373"/>
+<status status="PASS" start="2024-10-13T17:37:34.101774" elapsed="1.513889"/>
 </kw>
 <kw name="Scroll" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:11.586438" level="INFO">xpath criteria: //android.widget.TextView[@text="Products"]
-xpath criteria: (//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:38.462302" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="Products"]
+xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <arg>${locator1}</arg>
 <doc>Scrolls from one element to another
 Key attributes for arbitrary elements are `id` and `name`. See
 `introduction` for details about locating elements.</doc>
-<status status="PASS" start="2024-10-13T16:18:10.532216" elapsed="1.054222"/>
+<status status="PASS" start="2024-10-13T17:37:35.616079" elapsed="2.846417"/>
 </kw>
 <arg>${title_product}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-10-13T16:18:09.406848" elapsed="2.180852"/>
+<status status="PASS" start="2024-10-13T17:37:34.101648" elapsed="4.361082"/>
 </kw>
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:11.682599" level="INFO">xpath criteria: (//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:39.147737" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-13T16:18:11.587700" elapsed="0.094899"/>
+<status status="PASS" start="2024-10-13T17:37:38.463751" elapsed="0.684102"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:11.683597" level="INFO">Clicking element 'xpath=(//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView'.</msg>
-<msg time="2024-10-13T16:18:11.810086" level="INFO">xpath criteria: (//android.view.ViewGroup[@content-desc="store item"])[3]/android.view.ViewGroup[1]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:39.149680" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]'.</msg>
+<msg time="2024-10-13T17:37:40.156897" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Sauce Labs Bolt T-Shirt"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-13T16:18:11.682599" elapsed="0.127487"/>
+<status status="PASS" start="2024-10-13T17:37:39.148149" elapsed="1.009026"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-10-13T16:18:11.587700" elapsed="0.222386"/>
+<status status="PASS" start="2024-10-13T17:37:38.463207" elapsed="1.694247"/>
 </kw>
 <arg>${Tc_001.item2}</arg>
-<status status="PASS" start="2024-10-13T16:18:09.404853" elapsed="2.405233"/>
+<status status="PASS" start="2024-10-13T17:37:34.100957" elapsed="6.056698"/>
 </kw>
 <kw name="Add product to cart" owner="add_product_features">
 <kw name="Add product" owner="add_product_page">
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:12.881853" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]
-xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]</msg>
+<msg time="2024-10-13T17:37:40.631187" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-13T16:18:11.812079" elapsed="1.070769"/>
+<status status="PASS" start="2024-10-13T17:37:40.159690" elapsed="0.471676"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:12.883934" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="Add To Cart button"]'.</msg>
-<msg time="2024-10-13T16:18:12.957850" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]</msg>
+<msg time="2024-10-13T17:37:40.634076" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="Add To Cart button"]'.</msg>
+<msg time="2024-10-13T17:37:41.507461" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="Add To Cart button"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-13T16:18:12.882848" elapsed="0.075002"/>
+<status status="PASS" start="2024-10-13T17:37:40.631809" elapsed="0.875836"/>
 </kw>
 <arg>${add_cart}</arg>
-<status status="PASS" start="2024-10-13T16:18:11.811090" elapsed="1.146760"/>
+<status status="PASS" start="2024-10-13T17:37:40.159273" elapsed="1.348598"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:11.811090" elapsed="1.146760"/>
+<status status="PASS" start="2024-10-13T17:37:40.158884" elapsed="1.349139"/>
 </kw>
 <kw name="Click cart" owner="add_product_page">
 <kw name="Tap when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:13.008758" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="cart badge"]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:41.935077" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-13T16:18:12.958845" elapsed="0.049913"/>
+<status status="PASS" start="2024-10-13T17:37:41.510006" elapsed="0.425165"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:13.011166" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="cart badge"]/android.widget.ImageView'.</msg>
-<msg time="2024-10-13T16:18:13.727676" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="cart badge"]/android.widget.ImageView</msg>
+<msg time="2024-10-13T17:37:41.937005" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="tab bar option cart"]'.</msg>
+<msg time="2024-10-13T17:37:42.694672" level="INFO">xpath criteria: //XCUIElementTypeButton[@name="tab bar option cart"]</msg>
 <arg>${locator}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-10-13T16:18:13.008758" elapsed="0.718918"/>
+<status status="PASS" start="2024-10-13T17:37:41.935381" elapsed="0.759471"/>
 </kw>
 <arg>${cart}</arg>
-<status status="PASS" start="2024-10-13T16:18:12.958845" elapsed="0.769812"/>
+<status status="PASS" start="2024-10-13T17:37:41.509332" elapsed="1.185740"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:12.957850" elapsed="0.770807"/>
+<status status="PASS" start="2024-10-13T17:37:41.508513" elapsed="1.186714"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:11.811090" elapsed="1.917567"/>
+<status status="PASS" start="2024-10-13T17:37:40.158373" elapsed="2.536987"/>
 </kw>
 <kw name="Verify cart has 1 item" owner="verify_cart_page">
 <kw name="Get text and regexp when ready" owner="common">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:14.471823" level="INFO">xpath criteria: //android.widget.TextView[@content-desc="total number"]
-xpath criteria: //android.widget.TextView[@content-desc="total number"]</msg>
+<msg time="2024-10-13T17:37:43.366269" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
 <arg>${locator}</arg>
 <arg>${set.waittime}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-10-13T16:18:13.729195" elapsed="0.742628"/>
+<status status="PASS" start="2024-10-13T17:37:42.696792" elapsed="0.669621"/>
 </kw>
 <kw name="Get Text" owner="AppiumLibrary">
-<msg time="2024-10-13T16:18:14.515327" level="INFO">Element 'xpath=//android.widget.TextView[@content-desc="total number"]' text is '1 item' </msg>
-<msg time="2024-10-13T16:18:14.515327" level="INFO">xpath criteria: //android.widget.TextView[@content-desc="total number"]</msg>
-<msg time="2024-10-13T16:18:14.515327" level="INFO">${item_text} = 1 item</msg>
+<msg time="2024-10-13T17:37:44.018883" level="INFO">Element 'xpath=//XCUIElementTypeStaticText[@name="total number"]' text is '6 items' </msg>
+<msg time="2024-10-13T17:37:44.018936" level="INFO">xpath criteria: //XCUIElementTypeStaticText[@name="total number"]</msg>
+<msg time="2024-10-13T17:37:44.018974" level="INFO">${item_text} = 6 items</msg>
 <var>${item_text}</var>
 <arg>${locator}</arg>
 <doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
-<status status="PASS" start="2024-10-13T16:18:14.472820" elapsed="0.042507"/>
+<status status="PASS" start="2024-10-13T17:37:43.366737" elapsed="0.652247"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${item_text}</arg>
 <arg>^${number}.*</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2024-10-13T16:18:14.515327" elapsed="0.001004"/>
+<status status="PASS" start="2024-10-13T17:37:44.019093" elapsed="0.000158"/>
 </kw>
 <arg>${item}</arg>
 <arg>${number}</arg>
-<status status="PASS" start="2024-10-13T16:18:13.729195" elapsed="0.787136"/>
+<status status="PASS" start="2024-10-13T17:37:42.696433" elapsed="1.322860"/>
 </kw>
-<arg>1</arg>
-<status status="PASS" start="2024-10-13T16:18:13.729195" elapsed="0.787136"/>
+<arg>6</arg>
+<status status="PASS" start="2024-10-13T17:37:42.695936" elapsed="1.323420"/>
 </kw>
 <kw name="Delete product" owner="delete_product_page">
-<while condition="'${number}' != '0'">
+<for flavor="IN RANGE">
 <iter>
-<kw name="Get text and regexp when ready" owner="common">
-<arg>${item}</arg>
-<arg>${number}</arg>
-<status status="NOT RUN" start="2024-10-13T16:18:14.516331" elapsed="0.001025"/>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:44.788144" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:44.020459" elapsed="0.767861"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${number}' != '0'</arg>
-<arg>common.Tap when ready</arg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:44.790643" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:45.963208" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:44.788727" elapsed="1.174666"/>
+</kw>
 <arg>${delete}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2024-10-13T16:18:14.517356" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-13T17:37:44.020236" elapsed="1.943379"/>
 </kw>
-<status status="NOT RUN" start="2024-10-13T16:18:14.516331" elapsed="0.001025"/>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-10-13T17:37:44.020099" elapsed="1.943625"/>
 </iter>
-<status status="NOT RUN" start="2024-10-13T16:18:14.516331" elapsed="0.001025"/>
-</while>
-<arg>0</arg>
-<status status="PASS" start="2024-10-13T16:18:14.516331" elapsed="0.001025"/>
+<iter>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:46.792025" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:45.964978" elapsed="0.827161"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:09.403856" elapsed="5.113500"/>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:46.793714" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:47.883902" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:46.792393" elapsed="1.091609"/>
+</kw>
+<arg>${delete}</arg>
+<status status="PASS" start="2024-10-13T17:37:45.964463" elapsed="1.919654"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-10-13T17:37:45.964054" elapsed="1.920113"/>
+</iter>
+<iter>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:48.643177" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:47.885008" elapsed="0.758288"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:48.645662" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:49.757931" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:48.643557" elapsed="1.114612"/>
+</kw>
+<arg>${delete}</arg>
+<status status="PASS" start="2024-10-13T17:37:47.884573" elapsed="1.873831"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-10-13T17:37:47.884326" elapsed="1.874213"/>
+</iter>
+<iter>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:50.388166" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:49.759844" elapsed="0.628465"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:50.390638" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:51.326488" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:50.388630" elapsed="0.937996"/>
+</kw>
+<arg>${delete}</arg>
+<status status="PASS" start="2024-10-13T17:37:49.759346" elapsed="1.567444"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-10-13T17:37:49.758894" elapsed="1.567971"/>
+</iter>
+<iter>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:51.954071" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:51.328179" elapsed="0.626078"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:51.957063" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:52.917769" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:51.954673" elapsed="0.963277"/>
+</kw>
+<arg>${delete}</arg>
+<status status="PASS" start="2024-10-13T17:37:51.327494" elapsed="1.590680"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-10-13T17:37:51.327098" elapsed="1.591258"/>
+</iter>
+<iter>
+<kw name="Tap when ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:53.466148" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<arg>${set.waittime}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-10-13T17:37:52.919184" elapsed="0.547144"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-10-13T17:37:53.469299" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="counter minus button"]'.</msg>
+<msg time="2024-10-13T17:37:54.323236" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="counter minus button"]</msg>
+<arg>${locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-10-13T17:37:53.466740" elapsed="0.856675"/>
+</kw>
+<arg>${delete}</arg>
+<status status="PASS" start="2024-10-13T17:37:52.918815" elapsed="1.404819"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-10-13T17:37:52.918598" elapsed="1.405142"/>
+</iter>
+<var>${i}</var>
+<value>${number_loop}</value>
+<status status="PASS" start="2024-10-13T17:37:44.019896" elapsed="10.304120"/>
+</for>
+<arg>6</arg>
+<status status="PASS" start="2024-10-13T17:37:44.019663" elapsed="10.304572"/>
+</kw>
+<status status="PASS" start="2024-10-13T17:37:34.100661" elapsed="20.223975"/>
 </test>
 <kw name="Close app" owner="common" type="TEARDOWN">
 <kw name="Close Application" owner="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" start="2024-10-13T16:18:14.519318" elapsed="0.361713"/>
+<status status="PASS" start="2024-10-13T17:37:54.326022" elapsed="1.074887"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:14.518321" elapsed="0.363708"/>
+<status status="PASS" start="2024-10-13T17:37:54.325740" elapsed="1.075241"/>
 </kw>
-<status status="PASS" start="2024-10-13T16:18:02.787057" elapsed="12.094972"/>
+<status status="PASS" start="2024-10-13T17:37:28.682542" elapsed="26.718467"/>
 </suite>
-<status status="PASS" start="2024-10-13T16:18:02.785063" elapsed="12.097963"/>
+<status status="PASS" start="2024-10-13T17:37:28.682216" elapsed="26.719179"/>
 </suite>
-<status status="PASS" start="2024-10-13T16:18:02.761484" elapsed="12.121542"/>
+<status status="PASS" start="2024-10-13T17:37:28.681767" elapsed="26.719827"/>
+</suite>
+<status status="PASS" start="2024-10-13T17:37:28.665676" elapsed="26.736087"/>
 </suite>
 <statistics>
 <total>
@@ -221,9 +344,10 @@ xpath criteria: //android.widget.TextView[@content-desc="total number"]</msg>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Assignment3-0">Assignment3-0</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcase">Assignment3-0.Testcase</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Testcase1">Assignment3-0.Testcase.Testcase1</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Assignment3-main">Assignment3-main</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Assignment3-1">Assignment3-main.Assignment3-1</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Testcase">Assignment3-main.Assignment3-1.Testcase</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Testcase1">Assignment3-main.Assignment3-1.Testcase.Testcase1</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,5 +1,5 @@
 devices:
-  remote_url: "http://127.0.0.1:1234/wd/hub"
+  remote_url: "http://127.0.0.1:4723/wd/hub"
   device_name: "TestDevice"
   platform_version: "11.0"
   platform_name: "Android"
