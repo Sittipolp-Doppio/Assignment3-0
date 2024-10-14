@@ -1,5 +1,3 @@
-*** Settings ***
-Resource    ../commons/common.robot
 *** Keywords ***
 Delete product
     [Arguments]    ${number_loop}

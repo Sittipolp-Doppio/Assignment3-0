@@ -1,4 +1,3 @@
-
 *** Keywords ***
 Tap when ready
     [Arguments]    ${locator}
@@ -9,7 +8,6 @@ Scroll down to element
     [Arguments]    ${locator}    ${locator1}
     AppiumLibrary.Wait until element is visible    ${locator1}    ${set.waittime}
     AppiumLibrary.Scroll    ${locator}    ${locator1}
-    
     
 Get text and regexp when ready
     [Arguments]    ${locator}    ${number}
@@ -42,5 +40,6 @@ Open iOS Application
     ...    automationName=${devices.automation_name}
     ...    WebDriverAgentUrl=${devices.web_driver_agent}
     ...    noReset=${false}
+
 Close app
     appiumLibrary.Close application
